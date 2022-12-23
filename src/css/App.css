@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap");
+
+* {
+  font-family: Montserrat;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-theme: #1b2689;
+  --color-background: #fff;
+  --color-ui-00: #242424;
+  --color-ui-01: #eee;
+  --color-ui-02: #a7a39a;
+  --color-ui-03: #6f6f6f;
+  --color-ui-04: #dfdfdf;
+  --width-icon: 24px;
+}
+
+:root[color-theme="light"] {
+  --background: #fff;
+  --color: #242424;
+  --border: #dfdfdf;
+  --boxColor: rgba(0, 0, 0, 0.2);
+}
+
+:root[color-theme="dark"] {
+  --background: #161b22;
+  --color: #c9d1d9;
+  --border: #30363d;
+  --deg: 90deg;
+}
+
+:root {
+  --font-mobile: 10px;
+  --font-tablet: 12px;
+  --font-desktop: 13px;
+}
+
+/* 드래그 방지용 */
+.no-drag {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+/* 스크롤바 생성 방지용 */
+.no-scroll {
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--background);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background);
+}
+
+footer {
+  padding: 30px 0;
+  color: #ccc;
+  width: 100%;
+  text-align: center;
+}
+
+/* size of header btn */
+.trash-btn {
+  width: 20px;
+}
+
+.left-back-btn {
+  width: 20px;
+}
+.m-t-200 {
+  margin-top: 200px;
+}
+.m-t-100 {
+  margin-top: 100px;
+}
+.m-t-50 {
+  margin-top: 50px;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.modalbg {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.navLogo {
+  display: none;
+}

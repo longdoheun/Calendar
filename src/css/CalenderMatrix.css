@@ -1,0 +1,90 @@
+.calender {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scroll-snap-type: y proximity;
+  height: calc(100% - 26px);
+  min-height: 600px;
+}
+
+.mini {
+  min-height: 200px;
+}
+
+.calender::-webkit-scrollbar {
+  display: none;
+}
+.calender-matrix {
+  display: flex;
+  flex-direction: row;
+  scroll-snap-align: start;
+  height: 100%;
+}
+.calender-matrix > li {
+  width: calc(100% / 7);
+  height: 100%;
+}
+.calender-matrix > li > ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.block {
+  font-size: var(--font-mobile);
+  font-weight: 500;
+  text-align: center;
+  background-color: inherit;
+  overflow: hidden;
+  height: calc(100% / 6);
+  border-top: 0.5px var(--border) solid;
+}
+
+.no-border {
+  border: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.today {
+  background-color: var(--color-theme);
+  color: #fff;
+}
+
+.SUN,
+.일 {
+  color: red;
+}
+
+.monthly-event {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  font-weight: none;
+  box-sizing: border-box;
+  color: var(--color);
+  margin: 2px 1px;
+  height: 18px;
+  white-space: nowrap;
+  font-weight: 500;
+  animation: fadeIn 0.2s ease-in-out;
+  padding: 2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.day-number {
+  margin: 3px auto 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}

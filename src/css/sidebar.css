@@ -1,0 +1,69 @@
+.sidebar {
+  color: var(--color);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  z-index: 5;
+  background-color: var(--background);
+  min-width: 300px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.sidebar > p {
+  width: 100%;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.hl-top {
+  width: 100%;
+  padding: 10px 10px 10px 20px;
+  /* margin-top: 40px; */
+  text-align: left;
+  height: 50px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.hl-btm {
+  width: 100%;
+  height: 26px;
+  font-size: 15px;
+  justify-content: center;
+}
+.hl {
+  height: 76px;
+  border-bottom: 1px solid var(--border);
+}
+
+.round-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.mini-cal {
+  height: 300px;
+}
+
+.sidebar-main {
+  padding: 10px;
+  /* border-top: 0.5px rgb(240, 235, 235) solid; */
+}
+
+.mini-calendar-con {
+  margin: 0 0 8px;
+  border-radius: 5px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+}
+.mini-calendar {
+  height: 250px;
+}
+
+.page-index {
+  font-size: 15px;
+  margin-top: 10px;
+  justify-content: space-between;
+}

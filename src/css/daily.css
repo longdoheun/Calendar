@@ -1,0 +1,46 @@
+.daily-wrapper {
+  align-items: center;
+  width: 100%;
+}
+.daily-nav {
+  flex: 1;
+  height: 60px;
+  background-color: var(--color-background);
+  font-size: 24px;
+}
+.table-con {
+  color: var(--color-ui-02);
+  width: 100%;
+  height: calc(100% - 60px);
+}
+.time-row {
+  height: 60px;
+  width: 100%;
+  border-top: 0.5px solid;
+}
+
+.daily-event {
+  position: absolute;
+  width: 100%;
+}
+
+.dailyBlock {
+  flex: 1;
+  border-left: 0.5px solid;
+  position: relative;
+}
+
+.indexBlock {
+  width: 50px;
+}
+.index-nav {
+  width: 50px;
+  height: 60px;
+  background-color: var(--color-ui-02);
+}
+.daily-subheader {
+  width: 100%;
+  position: sticky;
+  top: 50px;
+  z-index: 3;
+}
