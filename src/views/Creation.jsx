@@ -52,7 +52,7 @@ export default function Creation() {
         try {
           const docRef = await addDoc(eventRef, dayEvent);
           console.log("Document written with ID: ", docRef.id);
-          navigate("", { replace: true });
+          navigate("/", { replace: true });
           dispatch(fetchDataAsync(user.uid));
         } catch (err) {
           console.log("error message", err);
