@@ -1,16 +1,16 @@
 //firebase
-import { db } from '../modules/firebase_config';
+import { db } from "../modules/firebase_config";
 import { Timestamp, collection, addDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useEffect, useState } from "react"
-import { useSelector, useDispatch} from "react-redux"
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchDataAsync } from "../modules/event";
 import dayjs from "dayjs";
 
 import LeftBackBtn from "../components/LeftBackBtn";
 import Header from "../components/Header";
-import InputWindow from '../components/InputWindow';
+import InputWindow from "../components/InputWindow";
 
 export default function Creation() {
   const auth = getAuth();
@@ -23,11 +23,11 @@ export default function Creation() {
     start: dayjs(new Date()).format("YYYY-MM-DDTHH:mm"),
     end: dayjs(new Date()).format("YYYY-MM-DDTHH:mm"),
     location: "",
-    color: "green"
-  }
+    color: "green",
+  };
 
   const [dayEvent, setDayEvent] = useState(defaultEvent);
-  
+
   //CREATE
   const eventConvert = (uid) => {
     return {
@@ -39,32 +39,34 @@ export default function Creation() {
           uid: uid,
           createdAt: Timestamp.fromDate(new Date()),
         };
-      }
+      },
     };
   };
 
   const addData = () => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        const eventRef = collection(db, "event").withConverter(eventConvert(user.uid));
+        const eventRef = collection(db, "event").withConverter(
+          eventConvert(user.uid)
+        );
         try {
-          navigate("", {replace: true});
           const docRef = await addDoc(eventRef, dayEvent);
           console.log("Document written with ID: ", docRef.id);
+          navigate("", { replace: true });
           dispatch(fetchDataAsync(user.uid));
         } catch (err) {
-          console.log("error message", err)
+          console.log("error message", err);
         }
       } else {
         console.log("user is signed out");
-      };
+      }
     });
-  }
+  };
 
   return (
     <>
       <Header navLeft={<LeftBackBtn />} />
-       <InputWindow
+      <InputWindow
         dayEvent={dayEvent}
         setDayEvent={setDayEvent}
         title={"나만의 일정 생성하기"}
@@ -73,4 +75,4 @@ export default function Creation() {
       />
     </>
   );
-};
+}
